@@ -26,25 +26,25 @@ end
 
 #Combiner deux arrays avec une fonction Ruby dédiée
 def combined_hash
-  combined_hash = Hash[cryptos.zip(values)]
+  combined_hash = Hash[cryptos.zip(values)] #fonction ruby pour combiner deux arrays
 end
 
 #La ou les crypto qui ont la plus grosse valeur.
 def find_biggest
-  biggest = combined_hash.sort_by {|k, v| v}[-1]
+  biggest = combined_hash.sort_by {|k, v| v}[-1] #par ordre croissant, sur la valeur v
 end
 
 #La ou les crypto qui ont la plus petite valeur.
 def find_smallest
-  smallest = combined_hash.sort_by {|k, v| v}[0]
+  smallest = combined_hash.sort_by {|k, v| v}[0] #par ordre croissant, sur la valeur v
 end
 
 #Les devises dont le cours est inférieur à 6000
 def find_under_6k
   result = []
   combined_hash.each do |key, value|
-    if value.to_i <= 6000
-      result << [key, value]
+    if value.to_i <= 6000 #.to_i pour transformer un string en integer
+      result << [key, value] #ajout valeurs dans l'array
     end
   end
   ordered_result = result.sort_by {|k, v| -v}.to_h #ordre croissant
@@ -53,7 +53,7 @@ end
 
 #La devise la plus chère parmi celles dont le cours est inférieur à 6000.
 def biggest_under_6k
-  find_under_6k.values.max
+  find_under_6k.values.max #fonction ruby pour afficher la valeur maximale integer uniquement
 end
 
 #Mega-méthode pour afficher l'ensemble des résultats d'un coup#

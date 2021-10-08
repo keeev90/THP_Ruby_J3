@@ -6,7 +6,7 @@ end
 # Combien y a-t-il de handle dans cette array ?
 def array_counter(journalists)
   puts
-  total = journalists.count
+  total = journalists.count #fonction ruby pour compter le nbre de valeurs contenues dans un array
   puts "Il y a #{total} journalistes dans l'array."
   return total
 end
@@ -14,7 +14,7 @@ end
 # Quel est le handle le plus court de cette liste ?
 def shortest_finder(journalists)
   puts
-  shortest = journalists.sort_by(&:length)[0]
+  shortest = journalists.sort_by(&:length)[0] #fonction ruby pour ordonner selon un critère à définir (&:...) et [0] pour afficher la valeur en 1ère position
   puts "Le handle le plus court est #{shortest}."
   return shortest
 end
@@ -24,8 +24,8 @@ def fiver_counter(journalists)
   puts
   fivers = []
   journalists.each do |i|
-    if i.length == (5+1)
-      fivers << i
+    if i.length == (5+1) #fonction ruby pour obtenir le nombre de caractère d'une valeur
+      fivers << i #création d'une array dans laquelle intégrer tous les handle avec 5 caractères
     end
   end
   fivers_number = fivers.count
@@ -44,7 +44,7 @@ end
 # Trie la liste de handle par ordre alphabétique.
 def get_alphabetical_order(journalists)
   puts
-  array_by_alphabetical_order = journalists.sort_by(&:downcase)
+  array_by_alphabetical_order = journalists.sort_by(&:downcase) #fonction ruby pour ordinner par ordre alphabétique
   puts "Voici la liste triée par ordre alphabétique:"
   print array_by_alphabetical_order
   return array_by_alphabetical_order 
@@ -63,7 +63,7 @@ end
 # Quelle est la position dans l'array de la personne @epenser ?
 def position_finder(journalists)
   puts
-  position = journalists.index("@epenser")
+  position = journalists.index("@epenser") #fonction ruby pour connaitre la position d'une valeur dans une array
   puts "@epenser est en position #{position} dans l'array."
   return position
 end
@@ -106,7 +106,7 @@ def menu
 end
 
 #Méthode pour revenir au menu
-def next_
+def back_to_menu
   puts
   puts "Appuyez sur [Entrer] pour revenir au menu."
   gets
@@ -122,49 +122,49 @@ def perform
     system "clear" #pour linux uniquement, system "cls" pour windows > clear le terminal
 		array_counter(journalists)
     puts
-    next_
+    back_to_menu
 		perform
 	when 2
     system "clear"
 		shortest_finder(journalists)
     puts
-    next_
+    back_to_menu
 		perform
 	when 3
     system "clear"
 		fiver_counter(journalists)
     puts
-    next_
+    back_to_menu
 		perform
   when 4
     system "clear"
 		uppercase_counter(journalists)
     puts
-    next_
+    back_to_menu
 		perform
   when 5
     system "clear"
 		get_alphabetical_order(journalists)
     puts
-    next_
+    back_to_menu
 		perform
   when 6
     system "clear"
 		order_by_length(journalists)
     puts
-    next_
+    back_to_menu
 		perform
   when 7
     system "clear"
 		position_finder(journalists)
     puts
-    next_
+    back_to_menu
 		perform
   when 8
     system "clear"
 		distribution_maker(journalists)
     puts
-    next_
+    back_to_menu
 		perform
 	end
 end
