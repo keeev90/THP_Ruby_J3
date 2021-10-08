@@ -36,7 +36,7 @@ end
 # Combien commencent par une majuscule (première lettre juste après le @) ?
 def uppercase_counter(journalists)
   puts
-  uppercasers_total = journalists.count {|e| e =~ /^@[[:upper:]]/} # https://stackoverflow.com/questions/52634598/how-to-count-words-in-array-that-start-with-a-capital-letter
+  uppercasers_total = journalists.count {|e| e.start_with?(/^@[[:upper:]]/)} # https://stackoverflow.com/questions/52634598/how-to-count-words-in-array-that-start-with-a-capital-letter
   puts "Il y a #{uppercasers_total} handles qui commencent par une majuscule."
   return uppercasers_total
 end
